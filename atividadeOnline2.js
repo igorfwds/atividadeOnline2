@@ -5,7 +5,7 @@ let nome = rs.question("Informe seu nome: ")
 let usuario = rs.question("Palestrante ou Participante? ")
 let idade = rs.question("Informe sua idade: ")
 let dataDoEvento = rs.question("Informe a data do evento no modelo aaaa-mm-dd : ")
-const hoje = new Date("2022-06-17");
+const hoje = new Date();
 
 
 if (usuario === "Palestrante" || usuario === "palestrante" ) {
@@ -20,7 +20,7 @@ if (usuario === "Palestrante" || usuario === "palestrante" ) {
         if (idade < 18){
             console.log("Cadastro negado. O participante é menor de idade.");
         } else {
-            if (dataDoEvento > hoje){
+            if (dataDoEvento < hoje){
                 console.log("Cadastro negado,data inválida.");
             } else {
                 listaDeParticipantes.push(nome)
